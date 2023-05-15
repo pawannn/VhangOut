@@ -26,7 +26,9 @@ const WhoAmI = () => {
                 <button onClick={signIn}><img src = {GoogleIcon} alt = "google-icon" />Signin with Google</button>
                 </> : <>
                     <h1>Welcome,</h1>
-                    <h1>{auth?.currentUser?.displayName}</h1>
+                    <h1 style = {{
+                        textAlign: "center",
+                    }}>{auth?.currentUser?.displayName}</h1>
                     <button onClick={SignOutUser}>Logout</button>
                 </>
             }

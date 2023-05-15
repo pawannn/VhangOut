@@ -16,7 +16,7 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     // grid-template-columns: 100px 100px;
-    grid-template-rows: minmax(380px, 370px);
+    grid-template-rows: minmax(360px, 350px);
 
     .box {
         color: black;
@@ -169,6 +169,16 @@ body{
                 align-items: center;
                 gap: 10px;
             }
+
+            .live-chat::-webkit-scrollbar {
+                // width: 8px;
+                background-color: #F5F5F5;
+              }
+
+              .live-chat::-webkit-scrollbar-thumb {
+                // border-radius: 10px;
+                background-color: #000000;
+              }
 
             .chat {
                 width: 100%;
