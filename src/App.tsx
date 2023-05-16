@@ -7,7 +7,7 @@ import './style/style.scss'
 import React from 'react'
 
 import { db } from "./config/firebase"
-import { getDocs, collection } from "firebase/firestore"
+import { getDocs, collection, onSnapshot } from "firebase/firestore"
 import { useEffect, useState } from "react"
 
 export interface messagesType {
@@ -15,9 +15,10 @@ export interface messagesType {
   message: string,
 }
 
-const App = (): React.ReactElement => {
+const App = () => {
 
-  const [chats, setChats] = useState<messagesType[] | null>(null)
+  const [chats, setChats] = useState<messagesType[] | null>(null);
+  const [fetched, setFetched] = useState<boolean>(false);
 
   const messagesRef = collection(db, 'messages')
 
@@ -31,12 +32,16 @@ const App = (): React.ReactElement => {
         tempChats.push(message);
       }
       setChats(tempChats);
+      setFetched(true);
+      console.log(1);
     }
   }
 
   useEffect(() => {
-        loadMessages();
-  }, [chats])
+    if (!fetched) {
+      loadMessages();
+    }
+  }, [fetched])
 
   return(
     <div className = "container">
@@ -44,7 +49,7 @@ const App = (): React.ReactElement => {
         <div className="box"><Aboutdev /></div>
         <div className="box"><Otherhumans /></div>
         <div className="box livefeed"><Livefeed chats = {chats} /></div>
-        <div className="box"><Postsomething setChat = {setChats} chats = {chats} /></div>
+        <div className="box"><Postsomething setChat = {setChats} chats = {chats} setFetched = {setFetched} /></div>
     </div>
   )
 }

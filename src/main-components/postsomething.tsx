@@ -11,6 +11,7 @@ interface messagesType {
 interface props {
     chats: messagesType[] | null,
     setChat: any,
+    setFetched: any,
 }
 
 const Postsomething = (props: props) => {
@@ -33,8 +34,7 @@ const Postsomething = (props: props) => {
                 await updateDoc(DocumentRef, {
                     message: messagesData.message,
                 })
-    
-    
+                props.setFetched(false);
                 setMsg("");
             } else {
                 alert("You must be signed in to post something!");
