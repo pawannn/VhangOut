@@ -210,3 +210,11 @@ body{
         grid-column: 1 / 3;
     }
 }
+
+@media screen and (max-width: 1080px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
