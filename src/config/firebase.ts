@@ -5,14 +5,16 @@ import {getFirestore} from "firebase/firestore"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+// ADD YOUR OWN FIREBASECONFIG
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDf58lqBQGlxN-hLdOxWbaYBsLZOL4LYmg",
-  authDomain: "vhangout-7.firebaseapp.com",
-  projectId: "vhangout-7",
-  storageBucket: "vhangout-7.appspot.com",
-  messagingSenderId: "82623566683",
-  appId: "1:82623566683:web:44fe3225002ff6622c407e"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
 // Initialize Firebase
